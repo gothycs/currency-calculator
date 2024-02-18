@@ -1,0 +1,36 @@
+<div class="container">
+  <h2>Kalkulator Walutowy</h2>
+  <div>
+    <label>Wybierz walutę początkową:</label>
+    <select [(ngModel)]="from">
+      <option value="EUR">EUR</option>
+      <option value="USD">USD</option>
+      <option value="CHF">CHF (frank szwajcarski)</option>
+      <option value="NOK">NOK (korona norweska)</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Wybierz walutę docelową:</label>
+    <select [(ngModel)]="to">
+      <option value="EUR">EUR</option>
+      <option value="USD">USD</option>
+      <option value="CHF">CHF (frank szwajcarski)</option>
+      <option value="NOK">NOK (korona norweska)</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Wprowadź kwotę:</label>
+    <input type="number" [(ngModel)]="amount" />
+  </div>
+
+  <button (click)="convert()">Przelicz</button>
+
+  <div *ngIf="result !== null">
+    <p>{{ result.toFixed(2) }} {{ to }}</p>
+  </div>
+
+</div>
+
+
